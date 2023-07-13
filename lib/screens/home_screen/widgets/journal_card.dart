@@ -12,7 +12,6 @@ class JournalCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (journal == null) {
-      print(journal);
       return InkWell(
         onTap: () {},
         child: Container(

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:my_diary/screens/home_screen/home_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_diary/services/journal_service.dart';
 
 void main() {
   runApp(const MyApp());
+
+  JournalService().register("Hello World");
 }
 
 class MyApp extends StatelessWidget {
