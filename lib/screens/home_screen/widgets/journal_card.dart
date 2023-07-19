@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_diary/helpers/weekday.dart';
 import 'package:my_diary/models/journal.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:uuid/uuid.dart';
 
 class JournalCard extends StatelessWidget {
   final Journal? journal;
@@ -9,11 +10,22 @@ class JournalCard extends StatelessWidget {
   const JournalCard({Key? key, this.journal, required this.showedDate})
       : super(key: key);
 
+
+  callAddJournalScreen(BuildContext context) {
+    Navigator.pushNamed(
+      context,
+      '/add-journal',
+      arguments: Journal(id: Uuid().v1(), content: '', createdAt: showedDate, updatedAt: showedDate),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     if (journal == null) {
       return InkWell(
-        onTap: () {},
+        onTap: () {
+          callAddJournalScreen(context);
+        },
         child: Container(
           height: 115,
           alignment: Alignment.center,

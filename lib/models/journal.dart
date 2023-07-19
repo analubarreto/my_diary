@@ -11,8 +11,12 @@ class Journal {
     required this.updatedAt,
   });
 
-  @override
-  String toString() {
-    return "$content \ncreated_at: $createdAt\nupdated_at:$updatedAt";
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'content': content,
+      'createdAt': createdAt.toString(),
+      'updatedAt': updatedAt.toString(),
+    };
   }
 }
