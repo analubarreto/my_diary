@@ -11,8 +11,6 @@ void main() {
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
 
-  Journal exampleJournal = Journal(id: 'id', content: 'Something', createdAt: DateTime.now(), updatedAt: DateTime.now());
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

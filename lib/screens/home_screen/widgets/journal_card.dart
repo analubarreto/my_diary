@@ -16,7 +16,19 @@ class JournalCard extends StatelessWidget {
       context,
       '/add-journal',
       arguments: Journal(id: Uuid().v1(), content: '', createdAt: showedDate, updatedAt: showedDate),
-    );
+    ).then((value) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content:
+              value != null && value == true ?
+              const Text('Registry salvo com sucesso!') :
+              const Text('Erro ao salvar registro!'),
+          ),
+        );
+      if (value != null && value == true) {
+
+      }
+    });
   }
 
   @override
